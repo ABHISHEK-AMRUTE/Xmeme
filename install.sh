@@ -8,5 +8,9 @@ mv mongodb-linux-x86_64-3.4.7 mongodb
 cd mongodb
 export PATH=$PATH:/../../mongodb/mongodb/bin
 mkdir data
-cd bin
-./mongod --dbpath ../data &
+echo 'Wait for 30 sec'
+echo 'Wait for 30 sec'
+echo 'Wait for 30 sec'
+echo 'Wait for 30 sec'
+sleep 30
+echo 'ready'
