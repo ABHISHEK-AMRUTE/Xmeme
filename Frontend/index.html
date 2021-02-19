@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+
+<head>
+    <title>XMeme</title>
+    <link rel="icon" href="./public/res/XM.svg" type="image/icon type">
+    <link rel="stylesheet" href="./public/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   
+
+
+    <div id="model" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top w3-round w3-padding">
+
+          <h3>Share what's on your mind.</h3>
+            <form class="w3-container">
+
+                <label>Name</label>
+                <input id="name" class="w3-input w3-border w3-round-large" type="text" required>
+
+                <label>Caption</label>
+                <input id="caption" class="w3-input w3-border w3-round-large" type="text" required>
+
+                <label>Image URL</label>
+                <input  id="url" class="w3-input w3-border w3-round-large" type="text" required>
+             <br>
+               <div class="w3-red w3-round" id="errorMessage"></div>
+            </form>
+           
+            <button class="w3-button w3-round w3-blue w3-margin" id="post">Post the Meme</button><button class="w3-button w3-round w3-blue " onclick="document.getElementById('model').style.display='none'; document.getElementById('errorMessage').innerHTML=''" >Cancel</button><br>
+           <img class="w3-padding w3-margin" id="preview" width="100px" >
+
+        </div>
+    </div>
+   
+    <div id="editModel" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top w3-round " style="width:50%;">
+          
+           <div class="w3-row">
+                <div class="w3-col m6 l6 w3-center-align" >
+                   <img id="editImage" src="" style="max-width: 100%;">
+                </div>
+                <div class="w3-col m6 l6">
+                   <div class="w3-padding w3-margin">
+                    <form class="w3-container">
+                        <h3>Edit your post</h3>
+                        <label>Name</label>
+                        <input id="editName" class="w3-input w3-border w3-round-large" readonly type="text" required>
+                         <br>
+                        <label>Caption</label>
+                        <input id="editCaption" class="w3-input w3-border w3-round-large" type="text" required>
+                      <br>
+                        <label>Image URL</label>
+                        <input  id="editUrl" class="w3-input w3-border w3-round-large" type="text" required>
+                     <br>
+                     <span id="postNumber" class="w3-small"></span>
+                    </form>
+                    <button class="w3-button w3-round w3-blue w3-margin" id="editPost">Save & update</button><button class="w3-button w3-round w3-blue " onclick="document.getElementById('editModel').style.display='none'" >Cancel</button><br>
+                    
+                   </div>
+                </div>
+           </div>
+          
+
+        </div>
+    </div>
+
+
+
+     <!-- navifation bar -->
+
+
+     <div id="welcomScreenId" class="welcomScreen w3-padding">
+           <div class="messageCard">
+            <img src="./public/res/XMeme.svg" width="250px">
+            <h3 class="mainheading"><b>Meme Stream</b></h3>
+            <div class="w3-text-grey w3-animate-left namelabel"> Please enter your name.</div>
+            <input id="username" class=" w3-border w3-animate-right w3-round-xlarge nameFieldInput" type="text" placeholder="name"> 
+            <br><span id="errorInNameField"style="color: rgba(255, 0, 0, 0.753);"></span>
+            <br>
+            <img  onclick="saveName()"  class="fabNext"src="./public/res/next.svg">
+           </div>
+     </div>
+     <div  id="mainScreenId">
+
+    
+    <div class="w3-container w3-white navigation">
+        <div class="w3-card w3-padding">
+            <div class="w3-row">
+                <div class="w3-col s6 m6 l6">
+                    <img class="w3-padding w3-center" src="./public/res/XMeme.svg">
+                </div>
+                <div class="w3-col s6  m6 l6" style="text-align: right;">
+                    <img id="refresh" class="w3-button w3-round"src="./public/res/home.svg">
+                    &nbsp;&nbsp;
+                    <img src="./public/res/profile.svg" width="40px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row">
+        <div class="w3-col m3 l4 ">
+            <div class="w3-row w3-padding w3-margin">
+                <div class="w3-col m0 l7 ">
+                    &nbsp;
+                </div>
+                <div class="w3-col m12 l5">
+                    <!-- <div class=" w3-round w3-padding  " style="text-align: center;">
+                        <button class="w3-button w3-blue w3-round w3-margin"
+                            onclick="document.getElementById('model').style.display='block'">Create post</button>
+                        <br>
+                        <span class="w3-text-grey">
+                            Post your meme here.
+                        </span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="w3-col m6 l4">
+            <div id="memeContainer">
+              
+            </div>
+        </div>
+        <div class="w3-col m3 l4">
+            <div class="userCard w3-border w3-round w3-padding w3-margin  w3-center-align" style="width: 50%;overflow-x: auto;">
+
+                <img class="w3-margin"src="./public/res/profile.svg" width="60px">
+                <br>
+                <B id="nameProfile">Abhishek Amrute</B><br>
+                <span class="w3-text-grey">
+                    memer
+                </span><br>
+                <button class="w3-button w3-blue w3-round w3-margin"
+                onclick="document.getElementById('model').style.display='block'">Create post</button>
+                <hr style="width: 100%;">
+                <span class="w3-text-grey" >
+                   <span class="sideOptions w3-button " onclick="loadMyPosts()">Your posts</span></b><br>
+                 
+                </span>
+            </div>
+        
+           
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="./public/js/components/noItems.js"></script>
+<script src="./public/js/components/memeCard.js"></script>
+<script src="./public/js/components/errorMessage.js"></script>
+<script src="./public/js/index.js"></script>
+
+</html>

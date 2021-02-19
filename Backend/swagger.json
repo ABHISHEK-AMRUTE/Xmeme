@@ -1,0 +1,235 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "XMeme",
+    "description": "Simple Nodejs, Javascript and HTML/CSS application to share memes. Deployed  [here](https://memestream-xmeme.netlify.app/)",
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "https://memestream-xmeme.herokuapp.com"
+    }
+  ],
+  "paths": {
+    "/memes/id": {
+      "patch": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n\n\"name\": \"Shivam sharma\",\n\"caption\": \"Very true LOL!\",\n\"url\": \"https://cdn.discordapp.com/attachments/807213412575739923/808738392308187187/1612888645513.jpg\",\n\"reactions\" : 1\n\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://memestream-xmeme.herokuapp.com"
+        }
+      ]
+    },
+    "/memes": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "post": {
+        "description": "Auto generated using Swagger Inspector",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/body_1"
+              },
+              "examples": {
+                "0": {
+                  "value": "{\n\n\"name\": \"Shivam sharma\",\n\"caption\": \"Very true LOL!\",\n\"url\": \"https://cdn.discordapp.com/attachments/807213412575739923/808738392308187187/1612888645513.jpg\",\n\"reactions\" : 0\n\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://memestream-xmeme.herokuapp.com"
+        }
+      ]
+    },
+    "/memes/:id": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "delete": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "202": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://memestream-xmeme.herokuapp.com"
+        }
+      ]
+    },
+    "/memeByName/:name": {
+      "get": {
+        "description": "Auto generated using Swagger Inspector",
+        "responses": {
+          "200": {
+            "description": "Auto generated using Swagger Inspector",
+            "content": {
+              "application/json; charset=utf-8": {
+                "schema": {
+                  "type": "string"
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "servers": [
+          {
+            "url": "https://memestream-xmeme.herokuapp.com"
+          }
+        ]
+      },
+      "servers": [
+        {
+          "url": "https://memestream-xmeme.herokuapp.com"
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "body": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          },
+          "reactions": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "body_1": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "caption": {
+            "type": "string"
+          },
+          "reactions": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
