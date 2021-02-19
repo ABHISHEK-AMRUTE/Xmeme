@@ -8,4 +8,5 @@ mv mongodb-linux-x86_64-3.4.7 mongodb
 cd mongodb
 export PATH=$PATH:/../../mongodb/mongodb/bin
 mkdir data
-cd
+cd bin
+./mongod --dbpath ../data &

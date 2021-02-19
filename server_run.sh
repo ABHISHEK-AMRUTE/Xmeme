@@ -1,6 +1,4 @@
 cd ./Backend/
-npm install
+npm install -y
 npm start
-cd 
-cd mongodb/mongodb/bin
-./mongod --dbpath ../data &
+
